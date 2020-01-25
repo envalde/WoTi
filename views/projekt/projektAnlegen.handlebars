@@ -1,34 +1,63 @@
 <div class="user_selctor">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5">
-                <div class="input_user_fields">
-                    <h1>Neues Projekt erstellen</h1>
-                    <form action="/projekt_anlegen" method="post">
-                        <p>Kunde</p>
-                        <select class="form-control" name="kunde">
-                          {{#each data }}
-                          <option value="{{id}}">{{firmenname}}</option>
-                          {{/each}}
-                        </select>          
-                        <p>Projektname</p>
-                        <input class="form-control" type="text"  name="projektname" placeholder="Olympus" required>
-                        <br>
-                        <br>
-                        <button class="btn button" type="submit">Absenden</button>
-                    </form>
+    <section class="section nav-spacer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-7">
+                    <h1 class="title is-2 has-text-weight-bold">Projekt anlegen</h1>
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>Legen Sie ein neues Projekt an</strong>
+                                        <form action="/projekt_anlegen" method="post">
+                                            <div class="field">
+                                                <label class="label">Kunde</label>
+                                                <div class="control">
+                                                    <div class="select">
+                                                        <select>
+                                                            {{#each data }}
+                                                            <option value="{{id}}">{{firmenname}}</option>
+                                                            {{/each}}
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p>Projektname</p>
+                                            <input class="input" type="text" name="projektname" placeholder="Olympus"
+                                                required>
+                                            <br>
+                                            <br>
+                                            <button class="btn button" type="submit">Absenden</button>
+                                        </form>
+
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="column is-5">
+                    <br><br><br>
+                    <article class="message is-link">
+                        <div class="message-header">
+                            <p>Wichtiger Hinweis zur Anlage von Projekten</p>
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                        <div class="message-body">
+                            Lorem ipsum dolor sit amet, consectetur adidpiscing elit. <strong>Pellentesque risus
+                                mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                            fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
+                            <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor,
+                            tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                            eget, facilisis sodales sem.
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="col-sm-7"></div>
         </div>
-    </div>
-</div>
-<div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="">
-
-            </div>
-        </div>
-    </div>
+    </section>
 </div>

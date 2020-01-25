@@ -1,241 +1,110 @@
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background: #fcfcfc;
+  font-family: "Inter", sans-serif;
 }
-h1 {
-  /* Font & Text */
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 700;
-  letter-spacing: normal;
-  line-height: 45.76px;
-  text-decoration: none solid rgb(72, 72, 72);
-  text-align: start;
-  text-indent: 0px;
-  text-transform: none;
-  vertical-align: baseline;
-  white-space: normal;
-  word-spacing: 0px;
-
-  /* Color & Background */
-  background-attachment: scroll;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  color: rgb(72, 72, 72);
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #303030;
-  line-height: 3rem;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-  letter-spacing: normal;
-  text-align: start;
+.navcontainer {
+  background-color: rgba(11, 13, 26, 1);
+  width: 100%;
+  height: 53px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
 }
-h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #303030;
-  line-height: 3rem;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-}
-h3 {
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: #303030;
-  line-height: 3rem;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-}
-p {
-  /* Font & Text */
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  letter-spacing: normal;
-  line-height: 22px;
-  text-decoration: none solid rgb(72, 72, 72);
-  text-align: start;
-  text-indent: 0px;
-  text-transform: none;
-  vertical-align: baseline;
-  white-space: normal;
-  word-spacing: 0px;
+@media (min-width: 276px) {
+  .has-text-sub {
+    color: #9f9fb7;
+  }
+  .navigationsbereich {
+    background-color: rgba(11, 13, 26, 1);
+  }
+  .navbar {
+    background-color: rgba(11, 13, 26, 1);
+    width: 100%;
+    margin: auto;
+  }
+  .navbar-item {
+    color: #fff;
+  }
+  .navbar-item:hover {
+    background-color: rgba(11, 13, 26, 1) !important;
+  }
+  .navbar-link {
+    color: #fff;
+  }
+  .navbar-link:hover {
+    background-color: rgba(11, 13, 26, 0.001) !important;
+  }
+  .navbar-link:focus {
+    background-color: rgba(11, 13, 26, 0.01) !important;
+  }
+  .navbar-item.has-dropdown.is-active .navbar-link,
+  .navbar-item.has-dropdown:focus .navbar-link,
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: rgba(11, 13, 26, 1);
+  }
+  .navbar-dropdown {
+    background-color: #3d3d52;
+    color: #fff;
+  }
+  .navbar-dropdown a.navbar-item:focus,
+  .navbar-dropdown a.navbar-item:hover {
+    color: #fff;
+  }
+  .header-has-bg {
+    background: linear-gradient(rgba(11, 13, 26, 1) 20%, rgba(11, 13, 26, 1));
+    height: 600px;
+    text-align: center;
+    padding: 200px 0px 0px 0px;
+  }
+  .is-verlauf {
+    background-color: rgb(11, 13, 26);
 
-  /* Color & Background */
-  background-attachment: scroll;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  color: rgb(72, 72, 72);
-}
-input {
-  font-family: , -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue",
-    sans-serif;
-}
-th {
-  /* Font & Text */
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-  font-size: 17px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 800;
-  letter-spacing: normal;
-  line-height: 21px;
-  text-decoration: none solid rgb(72, 72, 72);
-  text-align: start;
-  text-indent: 0px;
-  text-transform: none;
-  vertical-align: baseline;
-  white-space: normal;
-  word-spacing: 0px;
-
-  /* Color & Background */
-  background-attachment: scroll;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  color: rgb(72, 72, 72);
-}
-.btn{
-  background-color: #007bff;
-  border-color: #007bff;
-  color: #fff;
-}
-.btn:hover{
-  background-color: #007bff;
-  border-color: #007bff;
-}
-.button {
-  /* Font & Text */
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 800;
-  letter-spacing: normal;
-  line-height: 24px;
-  text-decoration: none solid rgb(255, 255, 255);
-  text-align: center;
-  text-indent: 0px;
-  text-transform: none;
-  vertical-align: baseline;
-  white-space: normal;
-  word-spacing: 0px;
-
-  /* Color & Background */
-  background-attachment: scroll;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  color: rgb(255, 255, 255);
-  background-color: #007bff;
-
-  /* Box */
-  height: 48px;
-  width: 200px;
-  border: 2px solid rgba(0, 0, 0, 0);
-  border-top: 2px solid rgba(0, 0, 0, 0);
-  border-right: 2px solid rgba(0, 0, 0, 0);
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
-  border-left: 2px solid rgba(0, 0, 0, 0);
-  margin: 0px;
-  padding: 10px 22px;
-  max-height: none;
-  min-height: 0px;
-  max-width: none;
-  min-width: 71.1935px;
-
-  /* Positioning */
-  position: relative;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
-  float: none;
-  display: inline-block;
-  clear: none;
-  z-index: auto;
-
-  /* List */
-  list-style-image: none;
-  list-style-type: disc;
-  list-style-position: outside;
-
-  /* Table */
-  border-collapse: separate;
-  border-spacing: 0px 0px;
-  caption-side: top;
-  empty-cells: show;
-  table-layout: auto;
-
-  /* Miscellaneous */
-  overflow: visible;
-  cursor: pointer;
-  visibility: visible;
-
-  /* Effects */
-  transform: none;
-  transition: background 0.2s ease-out 0s, border-color 0.2s ease-out 0s,
-    color 0.2s ease-out 0s;
-  outline-offset: 0px;
-  box-sizing: border-box;
-  resize: none;
-  text-shadow: none;
-  text-overflow: clip;
-  word-wrap: normal;
-  box-shadow: none;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-td {
-  /* Font & Text */
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  letter-spacing: normal;
-  line-height: 30px;
-  text-decoration: none solid rgb(72, 72, 72);
-  text-align: start;
-  text-indent: 0px;
-  text-transform: none;
-  vertical-align: baseline;
-  white-space: pre-wrap;
-  word-spacing: 0px;
-
-  /* Color & Background */
-  background-attachment: scroll;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  color: rgb(72, 72, 72);
-}
-.button:hover {
-  background-color: bisque;
-  background-attachment: scroll;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  color: rgb(255, 255, 255);
-  background-color: #007bff
+    text-align: center;
+  }
+  .enter-time {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(rgb(11, 13, 26), rgb(27, 32, 61));
+    color: #fff !important;
+    padding: 150px 0px 150px 0px;
+  }
+  #newtime {
+    scroll-behavior: smooth;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 80vh;
+  }
+  .nav-spacer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }
 
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
 
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .navbar {
+    background-color: rgba(11, 13, 26, 1);
+    min-width: 1000px;
+    max-width: 75%;
+    margin: auto;
+    border-bottom: 1px solid #383842;
+  }
+}
 
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

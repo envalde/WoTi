@@ -1,36 +1,74 @@
 <div class="user_selctor">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5">
-                <div class="input_user_fields">
-                    <h1>Projektdaten aktualisieren</h1>
-                  {{#each data }}
-                    <form action="/update_projekt/{{id}}" method="post">
-                        <p>Kunde</p>
-                        <select class="form-control" name="kunde">
-                          
-                          <option value="{{id}}">{{firmenname}}</option>
-                          
-                        </select>          
-                        <p>Projektname</p>
-                        <input class="form-control" type="text"  name="projektname" value="{{projektname}}" required>
-                      {{/each}}
-                        <br>
-                        <br>
-                        <button class="btn button" type="submit">Absenden</button>
-                    </form>
+    <section class="section nav-spacer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-7">
+                    <h1 class="title is-2 has-text-weight-bold">Prot bearbeiten</h1>
+
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Kunde: {{data.0.firmenname}}
+                            </p>
+                            <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="input_user_fields">
+                                    <h1>Kundendaten aktualisieren</h1>
+                                    {{#each data }}
+                                    <form action="/update_kunde/{{data.0.id}}" method="post">
+
+                                        <div class="field">
+                                            <label class="label">Kunde</label>
+                                            <div class="control">
+                                                <div class="select">
+                                                    <select name="rechnung">
+                                                        <option value="{{id}}">{{firmenname}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <label class="label">Projektname</label>
+                                            <div class="control">
+                                                <input class="input" type="text" name="projektname"
+                                                    value="{{projektname}}" required>
+                                            </div>
+                                        </div>
+
+                                        {{/each}}
+
+                                        <button class="btn button" type="submit">Aktualisieren</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-5">
+                    <br><br><br>
+                    <article class="message is-link">
+                        <div class="message-header">
+                            <p>Wichtiger Hinweis zur Bearbeitung von Projekten</p>
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                        <div class="message-body">
+                            Lorem ipsum dolor sit amet, consectetur adidpiscing elit. <strong>Pellentesque risus
+                                mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                            fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
+                            <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor,
+                            tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                            eget, facilisis sodales sem.
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="col-sm-7"></div>
         </div>
-    </div>
-</div>
-<div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="">
-
-            </div>
-        </div>
-    </div>
+    </section>
 </div>

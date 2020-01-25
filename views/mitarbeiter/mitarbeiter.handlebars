@@ -1,41 +1,37 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <br>
-<br>
-<h4>
-  Mitarbeiterliste (sortiert nach Projektnamen)
-</h4>
+<section class="section nav-spacer">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="title is-2 has-text-weight-bold">Mitarbeiter Übersicht</h1>
+        <table id="example" class="table table-striped" style="width:100%">
+          <thead>
+            <tr>
+              <th>Mitarbeiter ID</th>
+              <th>Nachname</th>
+              <th>Vorname</th>
+              <th>Summe Arbeitsstunden</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{nachname}}</td>
+              <td>{{vorname}}</td>
+              <td>{{stunden}}</td>
+              <!-- href Seite plus ID als property mitsenden -->
+              <td><a href="/update_mitarbeiter/{{id}}"><i class="fas fa-pencil-alt"></i></a></td>
+            </tr>
+            {{/each}}
 
-<!--Tabelle --> 
-<table id="example" class="table table-striped" style="width:100%">
-    <thead>
-      <tr>
-        <th>Mitarbeiter ID</th>
-        <th>Nachname</th>
-        <th>Vorname</th>
-        <th>Summe Arbeitsstunden</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each data}}
-      <tr>
-        <td>{{id}}</td>
-        <td>{{nachname}}</td>
-        <td>{{vorname}}</td>
-        <td>{{stunden}}</td>
-        <!-- href Seite plus ID als property mitsenden -->
-        <td><a href="/update_mitarbeiter/{{id}}"><i class="fas fa-pencil-alt"></i></a></td>
-      </tr>
-      {{/each}}
-      
-    </tbody>
-  </table>
+          </tbody>
+        </table>
 
-<br>
-<br>
-<a href="/mitarbeiter_anlegen" class="button">Neuen Mitarbeiter anlegen</a>
-        </div>
+        <br>
+        <br>
+        <a href="/mitarbeiter_anlegen" class="button is-rounded is-black is-outlined">Neuen Mitarbeiter anlegen</a>
+      </div>
     </div>
-</div>
+  </div>
+</section>
