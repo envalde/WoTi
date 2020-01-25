@@ -1,0 +1,174 @@
+<script>
+function getProjekt(kunde){
+  var xhttp = new XMLHttpRequest();
+  console.log('Requesting Data from Database');
+  
+  var x = document.getElementById("projekt");
+  x.options.length = 1;
+     xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var myArr = JSON.parse(this.responseText);
+
+      for( i = 0; i < myArr.length; i++){
+      var option = document.createElement("option");
+      option.text = myArr[i].projektname;
+      option.value = myArr[i].id;
+        x.add(option);
+      }
+      
+     //document.getElementById("ausgabe").innerHTML = this.responseText;
+    }
+  };
+  var path = '/get_projekte/';
+  xhttp.open("POST", path.concat(kunde) , true);
+  xhttp.send();
+  
+}
+
+function getUNIXTime(datum, time, id){
+  var zeit = datum + ' ' + time + ':00';
+  document.getElementById(id).value = zeit;
+  return (new Date(zeit).getTime() /1000)
+}
+
+  
+function validate(){
+  
+  var errors = [];
+  //einzugebendes Datum darf nicht in der Zukunft liegen
+  
+  
+  //http request ob Mitarbeiter schon zu dieser Zeit in einem anderen Projekt gearbeitet hat. Kann nicht an zwei Projekten zur gleichen Zeit arbeiten
+  
+  
+  //prüfen ob arbeitsende nach arbeitsbeginn + Pause & ob Pause größer als Arbeitszeit ist
+  var pause = document.getElementById('pause').value;
+  var datum = document.getElementById('datum').value;
+  
+  var ab = getUNIXTime(datum, document.getElementById('arbeitsbeginn').value, 'abUNIX');
+  var ae = getUNIXTime(datum, document.getElementById('arbeitsende').value, 'aeUNIX');
+  
+  if ( ae <= ab){
+    errors.push('Arbeitsende kann nicht vor oder gleich Arbeitsbeginn sein.');
+  }
+  var arbeitszeit = (ae - ab) /3600;
+  
+  if(arbeitszeit <= pause/60){
+    errors.push('Fehlerhafte Eingabe. Mehr Pause als Arbeitszeit inklusive Pause');  
+  }
+  
+  var reineArbeitszeit = arbeitszeit - (pause/60);
+  document.getElementById('arbeitszeit').value = reineArbeitszeit;
+  
+  
+  
+  //prüfen ob Feld kunde = 0 & ob ein Projekt ausgewählt wurde
+  var kunde = document.getElementById('kunde').value;
+  var projekt = document.getElementById('projekt').value;
+  if( kunde == 0){
+    errors.push('Bitte wählen Sie einen Kunden aus.');
+  }
+  if( projekt == 0){
+    errors.push('Bitte wählen Sie ein Projekt aus');
+  }
+  
+  
+  
+  
+  if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return false;
+    }
+  return true;
+  
+  
+  
+}
+</script>
+
+
+
+<div class="user_selctor">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="input_user_fields">
+                    <h1>Neue Arbeitszeiten Hinzufügen</h1>
+                    <form action="/" method="post" onsubmit="return validate()">
+                      <div class="row">
+                        <div class="col-xl-6">
+                          <p>Mitarbeiter</p>
+                         <select class="form-control" name="mitarbeiter">
+                          {{#each mitarbeiter }}
+                          <option value="{{id}}">{{nachname}}, {{vorname}}</option>
+                          {{/each}}
+                        </select>
+                        </div>
+                        <div class="col-xl-6">
+                          <p>Kunde</p>
+                      <!-- Ajax call on change um projektnamen unten richtig eingeben zu können -->
+                        <select class="form-control" name="kunde" id="kunde" onchange="getProjekt(this.value)">
+
+                        <option value="0" selected>Kunde wählen</option>
+                        {{#each firmennamen }}
+                          <option value="{{id}}" >{{firmenname}}</option>
+                        {{/each}}
+                        </select>                                                 
+                        </div>    
+                        <div class="col-xl-6">
+                          <p>Projekt</p>
+                        <select class="form-control" name="projekt" id="projekt">
+                          <option value="0" selected>Projekt wählen</option>
+                          <!--wird noch geändert, dass die Felder dynamisch mit Javascript und einem Ajax call ausgefüllt werden. -->
+                        </select>                           
+                        </div>
+                        <div class="col-xl-6">
+                          <p>Datum</p>
+                        <input class="form-control" type="date" name="datum" id="datum" placeholder="1.1.2020"> 
+                        <br>
+                        </div>
+                        <div class="col-xl-6">
+                        <p>Arbeitsbeginn</p>
+                        <input class="form-control" type="time"  step="900" id="arbeitsbeginn" name="arbeitsbeginn">
+                        </div>
+                        <div class="col-xl-6">
+                          <p>Arbeitsende</p>
+                        <input class="form-control" type="time" step="900" id="arbeitsende" name="arbeitsende">
+                        </div>
+                        <div class="col-xl-6">
+                          <p>Pause (in Minuten)</p>
+                        <input class="form-control" type="number" step="15" id="pause" name="pause">
+                        </div>
+                        <div class="col-xl-6">
+                          <p>was wurde erledigt</p>
+                        <input class="form-control" type="text" name="erledigt">
+                        </div>
+                        <div class="col-xl-6">
+                          <p>Fahrtkostenabrechnung (in km)</p>
+                        <input class="form-control" type="number"  step="1" min="0" name="fahrtkosten" placeholder="0">
+                        </div>
+                        <div class="col-xl-6">
+                          <br>
+                          <br>
+                          <button class="btn button" type="submit">Absenden</button>
+                          <input id="abUNIX" name="abUNIX" type="hidden" value="">
+                          <input id="aeUNIX" name="aeUNIX" type="hidden" value="">
+                          <input id="arbeitszeit" name="arbeitszeit" type="hidden" value="">
+                        </div>                      
+                      </div>                   
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-7"></div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="">
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="user_selctor">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="input_user_fields">
+                    <h1>Neuen Kunden hinzufügen</h1>
+                    <form action="/kunde_anlegen" method="post">
+                        <p>Kundenname</p>
+                        <input class="form-control" type="text" name="kundenname" placeholder="Platzhalter GmbH" required>
+                        
+                        <p>Stundensatz</p>
+                        <input class="form-control" type="number" name="stundensatz" placeholder="20" required>
+                        <p>Rechnung</p>
+                        <select class="form-control" name="rechnung">
+                        <option  selected value="1">nach jedem Auftrag</option>
+                        <option value="2">alle 3 Monate</option>
+                        </select>
+                        <br>
+                        <br>
+                        <button class="btn button" type="submit">Absenden</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-7"></div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="">
+
+            </div>
+        </div>
+    </div>
+</div>

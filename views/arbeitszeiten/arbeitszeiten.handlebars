@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>
+ Eingetragene Arbeitseinsätze
+</h2>
+<p>Eventuelle Fahrtkosten sind im Gesamtpreis noch nicht enthalten</p>
+<br>
+<!--Tabelle --> 
+<table  id="example" class="table table-striped" style="width:100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Firma</th>
+        <th>Projekt</th>
+        <th>Mitarbeiter</th>
+        <th>Stunden</th>
+        <th>Erledigte Arbeit</th>
+        <th>Gesamtpreis (in €)</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each data}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{firmenname}}</td>
+        <td>{{projektname}}</td>
+        <td>{{nachname}}, {{vorname}}</td>
+        <td>{{geleistete_Stunden}}</td>
+        <td>{{erledigt}}</td>
+        <td>{{kosten}}</td> 
+        <td><a href="rechnung/{{id}}"><i class="fas fa-money-bill-alt"></i></a></td>
+      </tr>
+      {{/each}}
+      
+    </tbody>
+  </table>
+        </div>
+    </div>
+</div>
+
+
+
