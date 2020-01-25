@@ -1,0 +1,36 @@
+<div class="user_selctor">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="input_user_fields">
+                    <h1>Projektdaten aktualisieren</h1>
+                  {{#each data }}
+                    <form action="/update_projekt/{{id}}" method="post">
+                        <p>Kunde</p>
+                        <select class="form-control" name="kunde">
+                          
+                          <option value="{{id}}">{{firmenname}}</option>
+                          
+                        </select>          
+                        <p>Projektname</p>
+                        <input class="form-control" type="text"  name="projektname" value="{{projektname}}" required>
+                      {{/each}}
+                        <br>
+                        <br>
+                        <button class="btn button" type="submit">Absenden</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-7"></div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="">
+
+            </div>
+        </div>
+    </div>
+</div>

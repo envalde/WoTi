@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <br>
+<br>
+<h4>
+  Kundenliste (sortiert nach firmenname)
+</h4>
+
+<!--Tabelle --> 
+<table  id="example" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Kunden ID</th>
+        <th>Firmenname</th>
+        <th>Stundensatz</th>
+        <th>Rechnungsart</th>
+        <th></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {{#each data}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{firmenname}}</td>
+        <td>{{stundensatz}}</td>
+        <td>{{beschreibung}}</td>
+        <!-- href Seite plus ID als property mitsenden -->
+        <td><a href="/update_kunde/{{id}}"><i class="fas fa-pencil-alt"></i></a></td>
+        
+      </tr>
+      {{/each}}
+      
+    </tbody>
+  </table>
+
+<br>
+<br>
+<a href="/kunde_anlegen" class="btn">Neuen Kunden anlegen</a>
+    </div>
+  </div>
+</div>

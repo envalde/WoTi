@@ -1,0 +1,34 @@
+<div class="user_selctor">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="input_user_fields">
+                    <h1>Neues Projekt erstellen</h1>
+                    <form action="/projekt_anlegen" method="post">
+                        <p>Kunde</p>
+                        <select class="form-control" name="kunde">
+                          {{#each data }}
+                          <option value="{{id}}">{{firmenname}}</option>
+                          {{/each}}
+                        </select>          
+                        <p>Projektname</p>
+                        <input class="form-control" type="text"  name="projektname" placeholder="Olympus" required>
+                        <br>
+                        <br>
+                        <button class="btn button" type="submit">Absenden</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-7"></div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="">
+
+            </div>
+        </div>
+    </div>
+</div>

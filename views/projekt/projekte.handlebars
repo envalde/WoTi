@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4>
+  Projektliste (sortiert nach Projektnamen)
+</h4>
+<br>
+<!--Tabelle --> 
+<table  id="example" class="table table-striped" style="width:100%">
+    <thead>
+      <tr>
+        <th>Projekt ID</th>
+        <th>Firmenname</th>
+        <th>Projektname</th>
+        <th>Summe Stunden</th>
+        <th>Gesamtkosten (in €)</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each data}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{firmenname}}</td>
+        <td>{{projektname}}</td>
+        <td>{{stunden}}</td>
+        <td>{{kosten}}</td>
+        <!-- href Seite plus ID als property mitsenden -->
+        <td><a href="/update_projekt/{{id}}"><i class="fas fa-pencil-alt"></i></a></td>
+      </tr>
+      {{/each}}
+      
+    </tbody>
+  </table>
+
+<br>
+<br>
+<a href="/projekt_anlegen" class="btn btn-primary">Neues Projekt anlegen</a>
+
+    </div>
+    
+  </div>
+  
+</div>
+
+
