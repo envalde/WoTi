@@ -1,36 +1,91 @@
 <div class="user_selctor">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5">
-                <div class="input_user_fields">
-                    <h1>Neuen Kunden hinzufügen</h1>
-                    <form action="/kunde_anlegen" method="post">
-                        <p>Kundenname</p>
-                        <input class="form-control" type="text" name="kundenname" placeholder="Platzhalter GmbH" required>
-                        
-                        <p>Stundensatz</p>
-                        <input class="form-control" type="number" name="stundensatz" placeholder="20" required>
-                        <p>Rechnung</p>
-                        <select class="form-control" name="rechnung">
-                        <option  selected value="1">nach jedem Auftrag</option>
-                        <option value="2">alle 3 Monate</option>
-                        </select>
-                        <br>
-                        <br>
-                        <button class="btn button" type="submit">Absenden</button>
-                    </form>
+    <section class="section nav-spacer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-7">
+                    <h1 class="title is-2 has-text-weight-bold">Kunde anlegen</h1>
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>Legen Sie einen neuen Kunden an</strong>
+                                        <form class="input_user_fields">
+                                            <form action="/kunde_anlegen" method="post">
+
+                                                <div class="field">
+                                                    <label class="label">Kundenname</label>
+                                                    <div class="control">
+                                                        <input class="input" type="text" name="kundenname"
+                                                            placeholder="Text input" placeholder="Platzhalter GmbH"
+                                                            required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="field">
+                                                    <label class="label">Stundensatz</label>
+                                                    <div class="control">
+                                                        <input class="input" type="number" name="stundensatz"
+                                                            placeholder="20" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="field">
+                                                    <label class="label">Rechnung</label>
+                                                    <div class="control">
+                                                        <div class="select">
+                                                            <select name="rechnung">
+                                                                <option selected value="1">nach jedem Auftrag</option
+                                                                    value="1">
+                                                                <option value="2">alle 3 Monate</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button class="btn button" type="submit">Absenden</button>
+                                            </form>
+                                        </form>
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="column is-5">
+                    <br><br><br>
+                    <article class="message is-link">
+                        <div class="message-header">
+                            <p>Wichtiger Hinweis zur Anlage von Kunden</p>
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                        <div class="message-body">
+                            Lorem ipsum dolor sit amet, consectetur adidpiscing elit. <strong>Pellentesque risus
+                                mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                            fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
+                            <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor,
+                            tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem
+                            eget, facilisis sodales sem.
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="col-sm-7"></div>
         </div>
-    </div>
+    </section>
 </div>
-<div class="content">
+
+
+
+
+<section class="section nav-spacer">
     <div class="container">
-        <div class="row">
-            <div class="">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title is-2 has-text-weight-bold">Kunden Übersicht</h1>
 
             </div>
         </div>
     </div>
-</div>
+</section>
